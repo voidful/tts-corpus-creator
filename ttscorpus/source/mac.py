@@ -23,7 +23,8 @@ class MAC:
 
     def transform_into_mp3(self, fname):
         subprocess.check_output(
-            ["ffmpeg", "-y", "-i", f"{fname}.aiff", "-f", "mp3", "-acodec", "libmp3lame", "-ab", "192000", "-ar",
+            ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", f"{fname}.aiff", "-f", "mp3", "-acodec",
+             "libmp3lame", "-ab", "192000", "-ar",
              "44100", f"{fname}.mp3"])
         subprocess.call(['rm', f"{fname}.aiff"])
 

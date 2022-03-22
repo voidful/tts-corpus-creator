@@ -1,6 +1,7 @@
 # tts-corpus-creator
-collection of different source of tts api for generating corpus.
-feature:
+
+collection of different source of tts api for generating corpus. feature:
+
 - large scale tts
 - support both free and charge source
 
@@ -9,7 +10,9 @@ feature:
 ### Charge
 
 #### Google Cloud TTS
+
 1. install `pip install google-cloud-texttospeech`
+
 ```python
 import os
 
@@ -35,7 +38,9 @@ mac('hello, there, I am mac', 'output')
 ```
 
 #### Google TTS
+
 1. install `pip install gtts`
+
 ```python
 from ttscorpus.source import GoogleTTS
 
@@ -44,5 +49,15 @@ mac('sixty six year old badly. independence of mutual fund boards represents dis
 ```
 
 #### Android TTS
-1. build android tts server app from: [https://github.com/voidful/android-tts-server](https://github.com/voidful/android-tts-server)
- 
+
+1. build android tts server app
+   from: [https://github.com/voidful/android-tts-server](https://github.com/voidful/android-tts-server)
+
+```python
+from ttscorpus.source import AndroidTTS
+
+atts = AndroidTTS('http://xxxx:port')
+atts(
+    "CHAPTER SIXTEEN I MIGHT HAVE TOLD YOU OF THE BEGINNING OF THIS LIAISON IN A FEW LINES BUT I WANTED YOU TO SEE EVERY STEP BY WHICH WE CAME I TO …",
+    'test')
+```
